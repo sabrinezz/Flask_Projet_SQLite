@@ -50,8 +50,8 @@ def Readfiche(post_id):
     return render_template('read_data.html', data=data)
 
 
-@app.route('/fiche_client/<nom>')
-def Readfiche(nom):
+@app.route('/fiche_nom/<nom>')
+def Readfichenom(nom):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom,))
