@@ -39,11 +39,11 @@ def authentification():
 
     return render_template('formulaire_authentification.html', error=False)
 
-@app.route('/fiche_client/<str:nom>')
+@app.route('/fiche_client/<char:nom>')
 def Readfiche(nom):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom,))
+    cursor.execute('SELECT * FROM clients WHERE nom = ?', (nom))
     data = cursor.fetchall()
     conn.close()
     # Rendre le template HTML et transmettre les données
