@@ -50,17 +50,9 @@ def Readfiche(post_id):
     return render_template('read_data.html', data=data)
 
 
-@app.route('/fiche_nom/<nom>', methods=['GET', 'POST'])
-def authentification2():
-    if request.method == 'POST':
-        # Vérifier les identifiants
-        if request.form['username'] == 'user' and request.form['password'] == '12345': # password à cacher par la suite
-            session['authentifie'] = True
-            # Rediriger vers la route lecture après une authentification réussie
-            return redirect(url_for('read_data.html'))
-        else:
-            # Afficher un message d'erreur si les identifiants sont incorrects
-            return render_template('formulaire_authentification.html', error=True)
+@app.route('/fiche_nom/<nom>')
+
+
 def Readfichenom(nom):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
