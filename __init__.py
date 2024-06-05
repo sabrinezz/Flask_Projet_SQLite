@@ -14,7 +14,7 @@ def est_authentifie():
 
 @app.route('/')
 def hello_world():
-    return render_template('test.html')
+    return render_template('hello.html')
 
 @app.route('/lecture')
 def lecture():
